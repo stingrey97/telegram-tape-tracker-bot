@@ -36,7 +36,7 @@ public class Tape {
         // Erstelle ein DateTimeFormatter im gewünschten Format
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
 
-        // Konvertiere das 'added' Datum (mysql konvertiert das für uns) in ein Instant
+        // Konvertiere das 'added' Datum (mysql konvertiert die Zeitzone für uns) in ein Instant
         ZonedDateTime cestDateTime = added.toInstant().atZone(ZoneOffset.systemDefault());
         
         // Formatiere die Zeit für die Ausgabe
