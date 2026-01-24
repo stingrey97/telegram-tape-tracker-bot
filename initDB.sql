@@ -1,3 +1,6 @@
+CREATE DATABASE IF NOT EXISTS tapebot;
+USE tapebot;
+
 CREATE TABLE users (
     id INT AUTO_INCREMENT,
     username VARCHAR(255) NOT NULL,

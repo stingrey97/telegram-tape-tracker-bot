@@ -4,7 +4,11 @@ import de.stingrey97.telegramtapebot.exceptions.DatabaseException;
 import de.stingrey97.telegramtapebot.model.Tape;
 import org.jetbrains.annotations.NotNull;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
