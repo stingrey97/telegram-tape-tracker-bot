@@ -25,18 +25,15 @@ public class Main {
         // Resets user_states to a stable state (in which is no cache necessary)
         try {
             ServiceFactory.getUserStateService().clearStatesForStartup();
-        } catch (
-                DatabaseException e) {
+        } catch (DatabaseException e) {
             logger.error("Unable to clear all states in startup", e);
         }
 
-        try (
-                TelegramBotsLongPollingApplication botsApplication = new TelegramBotsLongPollingApplication()) {
+        try (TelegramBotsLongPollingApplication botsApplication = new TelegramBotsLongPollingApplication()) {
             botsApplication.registerBot(apiKey, new TelegramBot());
             logger.info("Service is online");
             Thread.currentThread().join(); // Keeps service alive till it crashes or shutdown
-        } catch (
-                Exception e) {
+        } catch (Exception e) {
             logger.error("System crashed !!!", e);
         }
     }
