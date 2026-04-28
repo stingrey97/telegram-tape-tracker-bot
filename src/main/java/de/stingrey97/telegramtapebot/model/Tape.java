@@ -1,6 +1,6 @@
 package de.stingrey97.telegramtapebot.model;
 
-import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
@@ -36,12 +36,9 @@ public class Tape {
         // Erstelle ein DateTimeFormatter im gewünschten Format
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
 
-        // Konvertiere das 'added' Datum (was in UTC ist) in ein Instant
-        ZonedDateTime utcDateTime = ZonedDateTime.ofInstant(added.toInstant(), ZoneId.of("UTC"));
-
-        // Konvertiere die Zeit in die Mitteleuropäische Sommerzeit (CEST)
-        ZonedDateTime cestDateTime = utcDateTime.withZoneSameInstant(ZoneId.of("Europe/Berlin"));
-
+        // Konvertiere das 'added' Datum (mysql konvertiert die Zeitzone für uns) in ein Instant
+        ZonedDateTime cestDateTime = added.toInstant().atZone(ZoneOffset.systemDefault());
+        
         // Formatiere die Zeit für die Ausgabe
         String date = cestDateTime.format(formatter);
 
