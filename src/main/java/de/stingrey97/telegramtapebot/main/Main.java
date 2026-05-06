@@ -12,6 +12,7 @@ public class Main {
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args) {
+        logger.info("Test CI/CD Pipeline");
         logger.info("Starting telegram bot ...");
         logger.info("Initial activation code is: {}", PasscodeGenerator.generatePasscode());
 
