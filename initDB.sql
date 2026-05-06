@@ -1,12 +1,12 @@
-CREATE DATABASE IF NOT EXISTS tapebot;
-USE tapebot;
+CREATE DATABASE IF NOT EXISTS tape_bot_db;
+USE tape_bot_db;
 
 CREATE TABLE users (
     id INT AUTO_INCREMENT,
     username VARCHAR(255) NOT NULL,
     pin VARCHAR(4) NOT NULL,
     is_admin BOOLEAN DEFAULT FALSE,
-    wants_abonnement BOOLEAN DEFAULT TRUE,
+    subscription BOOLEAN DEFAULT TRUE,
     CONSTRAINT pk_users_id PRIMARY KEY (id),
     CONSTRAINT uq_users_username UNIQUE (username)
 );
