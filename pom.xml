@@ -43,12 +43,12 @@
         <dependency>
             <groupId>org.telegram</groupId>
             <artifactId>telegrambots-longpolling</artifactId>
-            <version>9.2.1</version>
+            <version>9.5.0</version>
         </dependency>
         <dependency>
             <groupId>org.telegram</groupId>
             <artifactId>telegrambots-client</artifactId>
-            <version>9.2.1</version>
+            <version>9.5.0</version>
         </dependency>
         <dependency>
             <groupId>com.mysql</groupId>
@@ -65,16 +65,11 @@
             <artifactId>logback-classic</artifactId>
             <version>1.5.25</version>
         </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-core</artifactId>
-            <version>1.5.25</version>
-        </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <!-- Maven Shade Plugin for creating the Fat JAR -->
+            <!-- Maven Shade Plugin for creating Fat JAR -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
